@@ -7,7 +7,13 @@ import java.util.Locale;
 
 import org.w3c.dom.Element;
 
+import com.google.android.gcm.GCMRegistrar;
+import com.shephertz.app42.paas.sdk.android.App42API;
+import com.shephertz.app42.paas.sdk.android.App42CallBack;
+import com.shephertz.app42.paas.sdk.android.App42Log;
 import com.upm.adapters.MainAdapter;
+import com.upm.others.Utils;
+import com.upm.others.Constants;
 import com.upm.upmnotification.R;
 
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -50,12 +56,11 @@ public class MainActivity extends ActionBarActivity {
 	
 	//for drawer layout
 	private String[] drawerTitles;
-    //private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
-	 private DrawerLayout mDrawerLayout;
-	    private ActionBarDrawerToggle mDrawerToggle;
+	private DrawerLayout mDrawerLayout;
+	private ActionBarDrawerToggle mDrawerToggle;
     
-	//for drawer layout	
+	
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -94,22 +99,11 @@ public class MainActivity extends ActionBarActivity {
         
         
 
-         //Set the adapter for the list view
-      // mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-       //         R.layout.drawer_list_item, drawerTitles));
-         //Set the list's click listener
-       // mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-        // Set the drawer toggle as the DrawerListener
+         
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
-       // getActionBar().setHomeButtonEnabled(true);
-      
-        //for drawer layout
-        
-        
-        
+       
         final ListView listview = (ListView) findViewById(R.id.listview);
         String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
             "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
@@ -149,7 +143,9 @@ public class MainActivity extends ActionBarActivity {
 			}
 		});
         
-        
+        App42API.initialize(this, Constants.App42ApiKey, Constants.App42ApiSecret);  
+        App42API.setLoggedInUser("valencia.dominic@gmail.com") ;  
+        Utils.registerWithApp42("424007910413");
 	}
 	
 
@@ -263,6 +259,6 @@ public class MainActivity extends ActionBarActivity {
             getActivity().setTitle(planet);
             return rootView;
         }
-    }
+    }  
 	
 }
