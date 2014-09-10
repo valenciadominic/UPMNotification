@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Urban Planet Media</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="overflow_title">Overflow</string>
+	<string-array name="leftdraweritems">
+	    <item>Recent Videos</item>
+	    <item>Sports</item>
+	    <item>News</item>
+	    <item>Funny</item>
+	    <item>Celebrity</item>
+	    <item>Religion</item>
+	    <item>How-To</item>
+	    <item>For Kids</item>
+	    <item>Learning</item>
+	    
+	</string-array>
+</resources>
