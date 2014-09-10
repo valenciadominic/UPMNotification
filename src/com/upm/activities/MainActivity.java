@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity {
 	    private ActionBarDrawerToggle mDrawerToggle;
     
 	//for drawer layout	
-    
+ 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,7 +67,7 @@ public class MainActivity extends ActionBarActivity {
         
         setContentView(R.layout.activity_main);
         
-        //for drawer layout      
+        //for drawer layout start     
         drawerTitles = getResources().getStringArray(R.array.leftdraweritems);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
